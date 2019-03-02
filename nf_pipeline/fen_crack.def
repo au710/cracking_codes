@@ -1,0 +1,14 @@
+BootStrap: docker
+From: quay.io/fenicsproject/stable:2017.1.0
+
+%post
+	pip install pyyaml
+	pip install pandas
+%runscript
+
+
+%environment
+ 
+
+%labels
+    Author A. Uppal <a.uppal14@imperial.ac.uk>
