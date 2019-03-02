@@ -2,7 +2,7 @@
 
 params.mode = "flow"
 params.runs = "run_list.csv"
-params.code = "strong_lim.py"
+params.code = "nf_drying.py"
 params.post = "para_rp.py"
 params.container = '~/Containers/fen_crack.sif'
 params.ncpus = 1
@@ -43,7 +43,7 @@ process simulation {
 
 	input:
 	    file "run_list.csv" from runs_file
-	    file "strong_lim.py" from code_file
+	    file "nf_drying.py" from code_file
 	    file common from common_dir
             file "para_rp.py" from post_dir
             file bin from bin_dir
@@ -70,7 +70,7 @@ process simulation {
         singularity exec $params.container bin/extract.py --run=$run run_list.csv > constants.yml
 
         # run the simulation
-        singularity exec $params.container python strong_lim.py > a.txt
+        singularity exec $params.container python nf_drying.py > a.txt
 
         pvpython para_rp.py
         

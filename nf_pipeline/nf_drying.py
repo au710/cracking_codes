@@ -1,7 +1,8 @@
 # code solves for crack morphologies in drying complex droplets
 # lubrication theory applied to reduce equations to 2D, compression acts as an effective plane strain
 # vanilla version of phase-field model for fracture applied.
-# gov eqns are: \nabla \cdot ((1-d)^2 \sigma) = 0, and 
+# gov eqns are: \nabla \cdot ((1-d)^2 \sigma) = \nabla p, 
+#               \frac{\partial h}{\partial t} - \nabla \cdot [D \nabla \phi_s] + J = 0 with \phi_s = h_0\phi_{s,0}/h
 #           \eta \partial_t d + \Gamma_c/l (d-l^2 \nabla^2 d) = (1-d)D, D= (\sigma-p):(e-p/2)
 # finite element code solved using fenics
 # read constants with yaml
